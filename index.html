@@ -3,309 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edule - eLearning Website Template</title>
+<title>INFYCODE - eLearning Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-/* ===== RESET ===== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Nunito',sans-serif;color:#212529;background:#fff;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-ul{list-style:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none}
-
-/* ===== VARIABLES ===== */
-:root{
-  --green:#3a9e5f;
-  --green-dark:#2a7d4a;
-  --green-light:#e8f5ee;
-  --green-bg:#e9f5ef;
-  --dark:#1a1f2e;
-  --text:#555;
-  --light:#888;
-  --border:#e8e8e8;
-  --gold:#f0a500;
-  --white:#fff;
-}
-
-/* ===== TOPBAR ===== */
-.topbar{background:#1a1f2e;padding:10px 0;font-size:13px;color:#aaa}
-.topbar .wrap{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
-.topbar a{color:#aaa;transition:color .2s}
-.topbar a:hover{color:var(--green)}
-.topbar .left a{margin-right:20px}
-.topbar .left i,.topbar .right i{margin-right:5px;color:var(--green)}
-
-/* ===== HEADER ===== */
-.site-header{background:#fff;border-bottom:1px solid #f0f0f0;position:sticky;top:0;z-index:9999;box-shadow:0 2px 15px rgba(0,0,0,.06)}
-.header-wrap{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:75px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{height:40px;width:auto}
-.logo-text{font-size:26px;font-weight:900;color:var(--dark);letter-spacing:-.5px}
-.logo-text span{color:var(--green)}
-.logo-icon{width:42px;height:42px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative}
-.logo-icon::before{content:'';position:absolute;inset:5px;border:2px solid rgba(255,255,255,.6);border-radius:5px}
-.logo-icon i{color:#fff;font-size:18px;position:relative;z-index:1}
-
-/* NAV */
-.main-nav{display:flex;align-items:center;gap:0}
-.main-nav > li{position:relative}
-.main-nav > li > a{display:flex;align-items:center;gap:5px;padding:10px 18px;font-size:15px;font-weight:700;color:var(--dark);transition:color .2s;position:relative}
-.main-nav > li > a:hover,.main-nav > li.active > a{color:var(--green)}
-.main-nav > li.active > a::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:20px;height:3px;background:var(--green);border-radius:2px}
-.main-nav > li > a i{font-size:10px;opacity:.6}
-.dropdown{display:none;position:absolute;top:calc(100% + 5px);left:0;min-width:220px;background:#fff;border-radius:10px;box-shadow:0 10px 35px rgba(0,0,0,.12);padding:10px 0;z-index:100}
-.main-nav > li:hover .dropdown{display:block;animation:fadeIn .2s ease}
-.dropdown li a{display:block;padding:9px 22px;font-size:14px;font-weight:600;color:#555;transition:all .2s}
-.dropdown li a:hover{color:var(--green);padding-left:28px;background:#f8fdf9}
-@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-
-.header-btns{display:flex;align-items:center;gap:10px}
-.btn-in{padding:9px 22px;font-size:14px;font-weight:700;color:var(--dark);transition:color .2s}
-.btn-in:hover{color:var(--green)}
-.btn-up{padding:9px 22px;font-size:14px;font-weight:700;color:var(--dark);border:2px solid var(--dark);border-radius:8px;transition:all .2s}
-.btn-up:hover{background:var(--dark);color:#fff}
-
-/* ===== HERO ===== */
-.hero{background:#fff;padding:70px 0 0;overflow:hidden}
-.hero-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
-.hero-left{padding-bottom:70px}
-.hero-eyebrow{font-size:20px;font-weight:800;color:var(--green);letter-spacing:.5px;display:flex;align-items:center;gap:8px;margin-bottom:18px}
-.hero-left h1{font-size:50px;font-weight:900;color:var(--dark);line-height:1.18;margin-bottom:18px}
-.hero-left p{font-size:16px;color:var(--text);line-height:1.85;margin-bottom:30px;max-width:460px}
-.hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;padding:14px 34px;border-radius:10px;font-size:15px;font-weight:800;transition:all .3s;box-shadow:0 6px 22px rgba(58,158,95,.32)}
-.hero-btn:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(58,158,95,.42)}
-.hero-btn i{font-size:13px}
-.hero-stats{display:flex;gap:18px;margin-top:36px;flex-wrap:wrap}
-.hero-stat{background:#fff;border:1px solid #eee;border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 18px rgba(0,0,0,.06);transition:transform .3s}
-.hero-stat:hover{transform:translateY(-3px)}
-.stat-icon{width:46px;height:46px;border-radius:12px;background:var(--green-light);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:18px}
-.stat-num{font-size:19px;font-weight:900;color:var(--dark)}
-.stat-label{font-size:12px;color:var(--light);font-weight:600;margin-top:2px}
-
-.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center}
-.hero-right img.main{position:relative;z-index:2;max-width:100%;animation:heroFloat 3.5s ease-in-out infinite}
-.hero-shape-top{position:absolute;top:10px;right:0;width:260px;height:260px;background:var(--green-light);border-radius:50%;z-index:1;opacity:.7}
-.hero-shape-bot{position:absolute;bottom:40px;left:0;width:180px;height:180px;background:#fef8e7;border-radius:50%;z-index:1;opacity:.8}
-.shape-float{position:absolute;z-index:3}
-.shape-float.s1{top:30px;left:40px;width:60px;animation:spin 8s linear infinite}
-.shape-float.s2{bottom:60px;right:20px;width:50px;animation:spin 10s linear infinite reverse}
-@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-/* ===== SECTION COMMON ===== */
-.sec{padding:80px 0}
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
-.sec-head{text-align:center;margin-bottom:50px}
-.sec-sub{display:block;font-size:14px;font-weight:700;color:var(--green);letter-spacing:.5px;margin-bottom:10px}
-.sec-head h2{font-size:36px;font-weight:900;color:var(--dark);line-height:1.3}
-.sec-head h2 .hl{color:var(--green);position:relative;display:inline-block}
-.sec-head h2 .hl::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:3px;background:var(--green);border-radius:2px}
-
-/* ===== COURSES ===== */
-.courses-sec{background:#fff}
-.tab-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:46px}
-.tab-item{padding:9px 22px;border:1.5px solid #ddd;border-radius:50px;font-size:14px;font-weight:700;color:#666;background:#fff;cursor:pointer;transition:all .2s}
-.tab-item:hover,.tab-item.active{background:var(--green);color:#fff;border-color:var(--green)}
-
-.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.course-card{background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden;transition:all .3s;box-shadow:0 3px 14px rgba(0,0,0,.06)}
-.course-card:hover{transform:translateY(-7px);box-shadow:0 18px 42px rgba(0,0,0,.11)}
-.c-thumb{height:196px;overflow:hidden}
-.c-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.course-card:hover .c-thumb img{transform:scale(1.07)}
-.c-body{padding:20px}
-.c-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.c-meta .av{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2.5px solid var(--green)}
-.c-meta .name{font-size:13px;font-weight:700;color:var(--dark)}
-.c-tag{margin-left:auto;padding:4px 14px;background:var(--green-light);color:var(--green);font-size:12px;font-weight:700;border-radius:50px}
-.c-title{font-size:15px;font-weight:700;color:var(--dark);line-height:1.55;margin-bottom:14px;display:block;transition:color .2s}
-.c-title:hover{color:var(--green)}
-.c-info{display:flex;gap:16px;font-size:13px;color:#999;padding:12px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin-bottom:14px}
-.c-info span{display:flex;align-items:center;gap:5px}
-.c-info i{color:var(--green);font-size:12px}
-.c-foot{display:flex;align-items:center;justify-content:space-between}
-.c-price{font-size:20px;font-weight:900;color:var(--green)}
-.c-price-old{font-size:13px;color:#bbb;text-decoration:line-through;margin-left:6px}
-.c-free{font-size:19px;font-weight:900;color:var(--green)}
-.c-rate{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--dark)}
-.c-stars{color:var(--gold);font-size:14px;letter-spacing:1px}
-.c-stars .empty{color:#ddd}
-
-.other-wrap{text-align:center;margin-top:46px}
-.other-btn{display:inline-block;padding:12px 38px;border:2px solid var(--green);border-radius:10px;color:var(--green);font-size:15px;font-weight:700;transition:all .2s}
-.other-btn:hover{background:var(--green);color:#fff}
-
-/* ===== INSTRUCTOR BANNER ===== */
-.instructor-sec{padding:0 20px;margin-bottom:80px}
-.instr-box{max-width:1200px;margin:0 auto;background:var(--green-bg);border-radius:16px;padding:50px 60px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
-.instr-box .sub{font-size:14px;font-weight:700;color:var(--green);letter-spacing:.5px;display:block;margin-bottom:12px}
-.instr-box h2{font-size:36px;font-weight:900;color:var(--dark);line-height:1.3}
-.instr-box h2 em{font-style:normal;color:var(--green);position:relative;display:inline-block}
-.instr-box h2 em::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:var(--green);border-radius:2px}
-.instr-arrow{flex:1;display:flex;justify-content:center;align-items:center;pointer-events:none;min-width:180px}
-.instr-arrow svg{width:180px}
-.drop-btn{display:inline-block;padding:14px 38px;background:var(--green-dark);color:#fff;border-radius:10px;font-size:15px;font-weight:800;white-space:nowrap;transition:all .3s;flex-shrink:0}
-.drop-btn:hover{background:var(--green);transform:translateY(-2px)}
-/* Deco dots */
-.deco-dots{position:absolute;display:grid;gap:5px}
-.deco-dots span{width:7px;height:7px;border-radius:50%;display:block}
-.deco-dots.gold span{background:var(--gold);opacity:.75}
-.deco-dots.green span{background:var(--green);opacity:.45}
-.deco-dots.r3{grid-template-columns:repeat(3,7px)}
-.deco-dots.r4{grid-template-columns:repeat(4,7px)}
-.deco-tl{bottom:22px;left:55px}
-.deco-tr{top:18px;right:55px}
-
-/* ===== HOW IT WORKS ===== */
-.how-sec{background:#fff}
-.steps-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:0;margin-top:10px}
-.step-card{background:var(--green-bg);border-radius:16px;padding:34px 28px 30px;position:relative;overflow:hidden}
-.step-card::after{content:'';position:absolute;top:-28px;right:-28px;width:90px;height:90px;border:3px solid rgba(58,158,95,.18);border-radius:50%}
-.step-card .step-icon-wrap{width:54px;height:54px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:26px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
-.step-card .step-icon-wrap img{width:28px;height:28px}
-.step-card h3{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:10px}
-.step-card p{font-size:14px;color:var(--text);line-height:1.7}
-/* orange arc on step 1 */
-.step-card.s1::before{content:'';position:absolute;bottom:-30px;right:-30px;width:100px;height:100px;border:3px solid var(--gold);border-radius:50%;opacity:.45}
-/* arc on step 3 */
-.step-card.s3::before{content:'';position:absolute;bottom:-40px;right:-20px;width:110px;height:110px;border:3px solid var(--gold);border-radius:50%;opacity:.4}
-.step-arrow{display:flex;align-items:center;padding:0 6px;margin-top:60px}
-.step-arrow svg{width:52px;color:var(--green)}
-
-/* ===== APP SECTION ===== */
-.app-sec{background:var(--green);padding:56px 0;position:relative;overflow:hidden}
-.app-sec::before,.app-sec::after{content:'';position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.1)}
-.app-sec::before{width:380px;height:380px;top:-80px;right:280px}
-.app-sec::after{width:560px;height:560px;top:-140px;right:160px}
-.app-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:0}
-.app-text{flex:0 0 auto;max-width:430px}
-.app-text .sub{font-size:14px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:.5px;display:block;margin-bottom:12px}
-.app-text h2{font-size:34px;font-weight:900;color:#fff;line-height:1.4}
-.app-gap{flex:1;display:flex;justify-content:center;align-items:center;position:relative;z-index:2}
-.app-gap svg{width:160px}
-.app-btns-wrap{display:flex;gap:14px;position:relative;z-index:2;flex-shrink:0}
-.app-store{display:block;border-radius:10px;overflow:hidden;transition:all .3s;box-shadow:0 4px 16px rgba(0,0,0,.18)}
-.app-store:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.app-store img{height:54px;width:auto;display:block}
-
-/* ===== TESTIMONIALS ===== */
-.testi-sec{background:#fff}
-.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:900px;margin:0 auto}
-.testi-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:38px 32px 30px;text-align:center;position:relative;box-shadow:0 3px 14px rgba(0,0,0,.05);transition:all .3s}
-.testi-card:hover{box-shadow:0 14px 40px rgba(58,158,95,.12);transform:translateY(-4px)}
-.testi-arrow-deco{position:absolute;top:22px;right:22px;pointer-events:none}
-.testi-arrow-deco svg{width:58px}
-.testi-av{position:relative;width:72px;height:72px;margin:0 auto 16px}
-.testi-av img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.testi-av .qb{position:absolute;bottom:-2px;right:-4px;width:24px;height:24px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px}
-.testi-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:14px}
-.testi-stars .e{color:#ddd}
-.testi-text{font-size:14px;color:var(--text);line-height:1.85;margin-bottom:20px}
-.testi-name{font-size:16px;font-weight:800;color:var(--dark);margin-bottom:4px}
-.testi-role{font-size:13px;color:var(--green)}
-
-.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:32px}
-.tdot{width:10px;height:10px;border-radius:50%;background:#ddd;cursor:pointer;transition:background .2s}
-.tdot.on{background:var(--green)}
-
-/* ===== BRANDS ===== */
-.brands-sec{background:var(--green-bg);padding:50px 0;position:relative;overflow:hidden}
-.brands-inner{max-width:1200px;margin:0 auto;padding:0 20px;position:relative}
-.brands-head{font-size:28px;font-weight:900;color:var(--dark);margin-bottom:36px}
-.brands-head span{color:var(--green);position:relative;display:inline-block}
-.brands-head span::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:var(--green);border-radius:2px}
-.brands-logos{display:flex;align-items:center;gap:36px;flex-wrap:wrap}
-.brand-item img{height:66px;width:auto;object-fit:contain;transition:transform .3s}
-.brand-item:hover img{transform:scale(1.08)}
-.brand-deco-dots{position:absolute;right:220px;top:8px;display:grid;grid-template-columns:repeat(3,6px);gap:5px}
-.brand-deco-dots span{width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.4;display:block}
-.brand-squiggle{position:absolute;right:55px;top:-8px;font-size:26px;color:var(--gold);font-weight:900;line-height:1;letter-spacing:-2px}
-
-/* ===== BLOG ===== */
-.blog-sec{background:#fff}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.blog-card{background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden;transition:all .3s;box-shadow:0 3px 14px rgba(0,0,0,.06)}
-.blog-card:hover{transform:translateY(-7px);box-shadow:0 18px 42px rgba(0,0,0,.11)}
-.b-thumb{height:200px;overflow:hidden}
-.b-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.blog-card:hover .b-thumb img{transform:scale(1.07)}
-.b-body{padding:20px}
-.b-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.b-meta .bav{width:36px;height:36px;border-radius:50%;object-fit:cover}
-.b-meta .bname{font-size:13px;font-weight:700;color:var(--dark)}
-.b-cat{margin-left:auto;padding:4px 14px;background:var(--green-light);color:var(--green);font-size:12px;font-weight:700;border-radius:50px}
-.b-title{font-size:15px;font-weight:700;color:var(--dark);line-height:1.55;margin-bottom:14px;display:block}
-.b-title:hover{color:var(--green)}
-.b-info{display:flex;gap:16px;font-size:13px;color:#999;padding:12px 0;border-top:1px solid #f0f0f0;margin-bottom:14px}
-.b-info span{display:flex;align-items:center;gap:5px}
-.b-info i{color:var(--green);font-size:12px}
-.b-info .heart i{color:#e74c3c}
-.read-btn{display:inline-block;padding:9px 22px;border:1.5px solid var(--green);border-radius:8px;color:var(--green);font-size:13px;font-weight:700;transition:all .2s}
-.read-btn:hover{background:var(--green);color:#fff}
-
-/* ===== FOOTER ===== */
-.site-footer{background:var(--green-bg);padding:68px 0 0;position:relative;overflow:hidden}
-.site-footer::after{content:'';position:absolute;right:-60px;bottom:70px;width:200px;height:200px;background:rgba(58,158,95,.07);border-radius:50%}
-.footer-grid{max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.7fr 1fr 1fr 1.4fr;gap:50px;position:relative;z-index:1}
-.footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:18px}
-.footer-logo-wrap .fl-icon{width:38px;height:38px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
-.footer-logo-wrap .fl-text{font-size:22px;font-weight:900;color:var(--dark)}
-.footer-logo-wrap .fl-text span{color:var(--green)}
-.f-addr{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:14px}
-.f-addr .ga{color:var(--green);font-weight:600}
-.f-contacts{margin-bottom:16px}
-.f-contacts li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);margin-bottom:8px}
-.f-contacts li i{color:var(--green);font-size:13px;width:14px}
-.f-socials{display:flex;gap:10px}
-.f-socials a{width:34px;height:34px;border:1.5px solid #ccc;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#777;font-size:13px;transition:all .2s}
-.f-socials a:hover{background:var(--green);border-color:var(--green);color:#fff}
-
-.f-col h4{font-size:16px;font-weight:800;color:var(--dark);margin-bottom:20px}
-.f-col ul li{margin-bottom:10px}
-.f-col ul li a{font-size:14px;color:var(--text);transition:color .2s}
-.f-col ul li a:hover{color:var(--green)}
-
-.f-sub-txt{font-size:14px;color:var(--text);line-height:1.75;margin-bottom:18px}
-.f-email{width:100%;padding:12px 16px;border:1.5px solid #ddd;border-radius:10px;font-size:14px;color:var(--dark);background:#fff;outline:none;font-family:inherit;margin-bottom:10px;transition:border-color .2s}
-.f-email:focus{border-color:var(--green)}
-.f-sub-btn{width:100%;padding:12px 24px;background:var(--green-dark);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;transition:background .2s}
-.f-sub-btn:hover{background:var(--green)}
-
-/* footer deco dots */
-.footer-deco{position:absolute;top:42px;left:32px;display:grid;grid-template-columns:repeat(4,7px);gap:5px}
-.footer-deco span{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.65;display:block}
-
-.footer-bottom{background:#1a1f2e;padding:18px 20px;margin-top:60px}
-.footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#6b7280}
-.footer-bottom-inner a{color:#6b7280;transition:color .2s}
-.footer-bottom-inner a:hover{color:var(--green)}
-.footer-bottom-inner .sep{margin:0 8px;opacity:.4}
-.fb-left a{margin-right:16px}
-.edule-lnk{color:var(--green)!important;font-weight:700}
-.cc-lnk{color:#60a5fa!important;font-weight:700}
-.heart{color:#e74c3c}
-
-/* ===== SCROLL TO TOP ===== */
-.scroll-top{position:fixed;bottom:28px;right:28px;z-index:9999;width:44px;height:44px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;box-shadow:0 4px 16px rgba(58,158,95,.4);transition:all .3s;opacity:0;pointer-events:none;border:none}
-.scroll-top.show{opacity:1;pointer-events:all}
-.scroll-top:hover{background:var(--green-dark);transform:translateY(-3px)}
-
-/* ===== REVEAL ===== */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
-.rv.show{opacity:1;transform:none}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:1050px){.courses-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.steps-row{grid-template-columns:1fr;gap:24px}.step-arrow{transform:rotate(90deg);margin:0 auto -8px}}
-@media(max-width:768px){.header-wrap{padding:0 16px}.main-nav,.header-btns .btn-in{display:none}.hero-inner{grid-template-columns:1fr}.hero-right{display:none}.hero-left h1{font-size:34px}.courses-grid,.blog-grid,.testi-grid{grid-template-columns:1fr}.instr-box{flex-direction:column;gap:20px;text-align:center}.instr-arrow{display:none}.app-inner{flex-direction:column;text-align:center}.app-gap{display:none}.footer-grid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- ===== TOPBAR ===== -->
 <div class="topbar">
   <div class="wrap">
     <div class="left">
@@ -318,13 +23,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- ===== HEADER ===== -->
 <header class="site-header">
   <div class="header-wrap">
     <!-- Logo -->
     <a href="#" class="logo">
-      <!-- <img src="https://template.hasthemes.com/edule/eduLe/assets/images/logo.png" alt="EduLe Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> -->
-      <div class="logo-icon" style="display:none"><i class="fas fa-book-open"></i></div>
+      <div class="logo-icon"><i class="fas fa-book-open"></i></div>
       <div class="logo-text">INFY<span>CODE</span></div>
     </a>
 
@@ -373,41 +77,87 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-inner">
+
+    <!-- LEFT CONTENT -->
     <div class="hero-left rv">
       <div class="hero-eyebrow">Start your favourite course</div>
-      <h1>Now learning from anywhere, and build your bright career.</h1>
+      <h1>Now learning from anywhere, and build your <span class="hl">bright career.</span></h1>
       <p>It has survived not only five centuries but also the leap into electronic typesetting.</p>
       <a href="#" class="hero-btn">Start A Course <i class="fas fa-arrow-right"></i></a>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="stat-icon">
-            <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-5.png" alt="" style="width:26px" onerror="this.outerHTML='<i class=\'fas fa-book-open\'></i>'">
-          </div>
-          <div>
-            <div class="stat-num">1,235</div>
-            <div class="stat-label">courses</div>
-          </div>
-        </div>
-        <div class="hero-stat">
-          <div class="stat-icon">
-            <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-6.png" alt="" style="width:26px" onerror="this.outerHTML='<i class=\'fas fa-star\'></i>'">
-          </div>
-          <div>
-            <div class="stat-num">4.8</div>
-            <div class="stat-label">Rating (86K)</div>
-          </div>
-        </div>
-      </div>
     </div>
+
+    <!-- RIGHT: Image + Floating Badges -->
     <div class="hero-right rv d2">
-      <div class="hero-shape-top"></div>
-      <div class="hero-shape-bot"></div>
-      <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-8.png" class="shape-float s1" alt="" onerror="this.style.display='none'">
-      <img src="https://template.hasthemes.com/edule/eduLe/assets/images/slider/slider-1.png" class="main" alt="Student">
-      <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-9.png" class="shape-float s2" alt="" onerror="this.style.display='none'">
+
+      <!-- 1. Main student image -->
+      <img
+        src="https://template.hasthemes.com/edule/eduLe/assets/images/slider/slider-1.png"
+        class="hero-img-main"
+        alt="Student with laptop"
+      >
+
+      <!-- 2. Gold scattered dashes (top-left of right panel) -->
+      <div class="hero-dashes">
+        <svg width="130" height="65" viewBox="0 0 130 65" fill="none">
+          <ellipse cx="15"  cy="22" rx="7" ry="2.8" fill="#f0a500" opacity="0.85" transform="rotate(-25 15 22)"/>
+          <ellipse cx="38"  cy="10" rx="7" ry="2.8" fill="#f0a500" opacity="0.75" transform="rotate(-18 38 10)"/>
+          <ellipse cx="62"  cy="26" rx="6" ry="2.4" fill="#f0a500" opacity="0.70" transform="rotate(-35 62 26)"/>
+          <ellipse cx="8"   cy="44" rx="5.5" ry="2.2" fill="#f0a500" opacity="0.65" transform="rotate(-12 8 44)"/>
+          <ellipse cx="30"  cy="54" rx="5.5" ry="2.2" fill="#f0a500" opacity="0.60" transform="rotate(-30 30 54)"/>
+          <ellipse cx="72"  cy="46" rx="5"   ry="2"   fill="#f0a500" opacity="0.55" transform="rotate(-22 72 46)"/>
+          <ellipse cx="50"  cy="60" rx="4.5" ry="1.8" fill="#f0a500" opacity="0.50" transform="rotate(-8  50 60)"/>
+          <ellipse cx="88"  cy="18" rx="4.5" ry="1.8" fill="#f0a500" opacity="0.50" transform="rotate(-42 88 18)"/>
+          <ellipse cx="108" cy="38" rx="4"   ry="1.6" fill="#f0a500" opacity="0.45" transform="rotate(-20 108 38)"/>
+        </svg>
+      </div>
+
+      <!-- 3. Play button (left side, middle-bottom area) -->
+      <button class="hero-play" aria-label="Play video">
+        <i class="fas fa-play"></i>
+      </button>
+
+      <!-- 4. Gold curved arrow — from play button toward green circle -->
+      <svg class="hero-gold-arrow" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Curve starts bottom-left (near play btn) arcs toward top-right (toward circle) -->
+        <path d="M15 80 C30 55, 65 35, 100 20" stroke="#f0a500" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <!-- Arrowhead at top-right -->
+        <path d="M88 12 L102 20 L94 32" stroke="#f0a500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+
+      <!-- 5. Green circle badge: 1,235 courses -->
+      <div class="hero-circle">
+        <div class="ci-icon"><i class="fas fa-book-open"></i></div>
+        <div class="ci-num">1,235</div>
+        <div class="ci-label">courses</div>
+      </div>
+
+      <!-- 6. Wavy green line below the circle -->
+      <svg class="hero-wave" viewBox="0 0 120 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 11 Q18 2,32 11 Q46 20,60 11 Q74 2,88 11 Q102 20,116 11"
+              stroke="#3a9e5f" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      </svg>
+
+      <!-- 7. Rating badge (white circle, top-right, partially cut off) -->
+      <div class="hero-rating">
+        <div class="rr-top">
+          <span class="rr-num">4.8</span>
+          <span class="rr-star">★</span>
+        </div>
+        <div class="rr-label">Rating (86K)</div>
+      </div>
+
+      <!-- 8. Small green arrow below rating badge (pointing down-left) -->
+      <svg class="hero-green-arrow" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 4 C20 10, 8 18, 6 30" stroke="#3a9e5f" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M2 22 L6 32 L16 28" stroke="#3a9e5f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+
     </div>
+    <!-- /hero-right -->
+
   </div>
 </section>
+<!-- /HERO -->
 
 <!-- ===== COURSES ===== -->
 <section class="sec courses-sec">
@@ -559,7 +309,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- ===== INSTRUCTOR BANNER ===== -->
 <div class="instructor-sec">
   <div class="instr-box rv">
-    <!-- deco dots bottom-left (gold) -->
     <div class="deco-dots gold r4 deco-tl">
       <span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span>
@@ -569,7 +318,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <span class="sub">Become A Instructor</span>
       <h2>You can join with<br>INFYCODE as <em>a instructor?</em></h2>
     </div>
-    <!-- Curved arrow -->
     <div class="instr-arrow">
       <svg viewBox="0 0 180 75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 68 C40 60, 90 20, 155 32" stroke="#3a9e5f" stroke-width="2.2" stroke-linecap="round" fill="none"/>
@@ -577,7 +325,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </svg>
     </div>
     <a href="#" class="drop-btn">Drop Information</a>
-    <!-- deco dots top-right (gold) -->
     <div class="deco-dots gold r4 deco-tr">
       <span></span><span></span><span></span><span></span>
       <span></span><span></span><span></span><span></span>
@@ -594,38 +341,33 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <h2>How It <span class="hl">Work?</span></h2>
     </div>
     <div class="steps-row">
-      <!-- Step 1 -->
       <div class="step-card s1 rv">
         <div class="step-icon-wrap">
-          <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-15.png" alt="" onerror="this.outerHTML='<i class=\'fas fa-search\' style=\'color:var(--green);font-size:22px\'></i>'">
+          <i class="fas fa-search" style="color:var(--green);font-size:22px"></i>
         </div>
         <h3>Find Your Course</h3>
         <p>It has survived not only centurie also leap into electronic.</p>
       </div>
-      <!-- Arrow 1 -->
       <div class="step-arrow rv d1">
         <svg viewBox="0 0 52 24" fill="none">
           <path d="M2 12H44M36 4L44 12L36 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <!-- Step 2 -->
       <div class="step-card rv d1">
         <div class="step-icon-wrap">
-          <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-15.png" alt="" onerror="this.outerHTML='<i class=\'fas fa-chair\' style=\'color:var(--green);font-size:22px\'></i>'">
+          <i class="fas fa-chair" style="color:var(--green);font-size:22px"></i>
         </div>
         <h3>Book A Seat</h3>
         <p>It has survived not only centurie also leap into electronic.</p>
       </div>
-      <!-- Arrow 2 -->
       <div class="step-arrow rv d2">
         <svg viewBox="0 0 52 24" fill="none">
           <path d="M2 12H44M36 4L44 12L36 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <!-- Step 3 -->
       <div class="step-card s3 rv d2">
         <div class="step-icon-wrap">
-          <img src="https://template.hasthemes.com/edule/eduLe/assets/images/shape/shape-16.png" alt="" onerror="this.outerHTML='<i class=\'fas fa-certificate\' style=\'color:var(--green);font-size:22px\'></i>'">
+          <i class="fas fa-certificate" style="color:var(--green);font-size:22px"></i>
         </div>
         <h3>Get Certificate</h3>
         <p>It has survived not only centurie also leap into electronic.</p>
@@ -666,7 +408,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <h2>Feedback From <span class="hl">Student</span></h2>
     </div>
     <div class="testi-grid">
-      <!-- Testi 1 -->
       <div class="testi-card rv">
         <div class="testi-arrow-deco">
           <svg viewBox="0 0 65 58" fill="none">
@@ -679,11 +420,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <div class="qb"><i class="fas fa-quote-left"></i></div>
         </div>
         <div class="testi-stars">★★★★<span class="e">★</span></div>
-        <p class="testi-text">Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
+        <p class="testi-text">Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting.</p>
         <div class="testi-name">Sara Alexander</div>
         <div class="testi-role">Product Designer, USA</div>
       </div>
-      <!-- Testi 2 -->
       <div class="testi-card rv d1">
         <div class="testi-arrow-deco">
           <svg viewBox="0 0 65 58" fill="none">
@@ -696,7 +436,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <div class="qb"><i class="fas fa-quote-left"></i></div>
         </div>
         <div class="testi-stars">★★★★<span class="e">★</span></div>
-        <p class="testi-text">Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
+        <p class="testi-text">Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting.</p>
         <div class="testi-name">Melissa Roberts</div>
         <div class="testi-role">Product Designer, USA</div>
       </div>
@@ -736,7 +476,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <h2>Educational <span class="hl">Tips &amp; Tricks</span></h2>
     </div>
     <div class="blog-grid">
-      <!-- Blog 1 -->
       <div class="blog-card rv">
         <div class="b-thumb"><img src="https://template.hasthemes.com/edule/eduLe/assets/images/blog/blog-01.jpg" alt="Blog 1"></div>
         <div class="b-body">
@@ -753,7 +492,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <a href="#" class="read-btn">Read More</a>
         </div>
       </div>
-      <!-- Blog 2 -->
       <div class="blog-card rv d1">
         <div class="b-thumb"><img src="https://template.hasthemes.com/edule/eduLe/assets/images/blog/blog-02.jpg" alt="Blog 2"></div>
         <div class="b-body">
@@ -770,7 +508,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <a href="#" class="read-btn">Read More</a>
         </div>
       </div>
-      <!-- Blog 3 -->
       <div class="blog-card rv d2">
         <div class="b-thumb"><img src="https://template.hasthemes.com/edule/eduLe/assets/images/blog/blog-03.jpg" alt="Blog 3"></div>
         <div class="b-body">
@@ -793,25 +530,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
-  <!-- deco dots top-left -->
   <div class="footer-deco">
     <span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span>
   </div>
-
   <div class="footer-grid">
-    <!-- Col 1 -->
     <div>
       <div class="footer-logo-wrap">
-        <!-- <img src="https://template.hasthemes.com/edule/eduLe/assets/images/logo.png" alt="EduLe" style="height:36px;width:auto" onerror="this.style.display='none'"> -->
-       <div class="logo-text">INFY<span>CODE</span></div>
+        <div class="logo-text">INFY<span>CODE</span></div>
       </div>
-      <p class="f-addr">
-        Caribbean Ct<br>
-        <span class="ga">Haymarket, Virginia (VA).</span>
-      </p>
+      <p class="f-addr">Caribbean Ct<br><span class="ga">Haymarket, Virginia (VA).</span></p>
       <ul class="f-contacts">
         <li><i class="far fa-envelope"></i> address@gmail.com</li>
         <li><i class="fas fa-phone-alt"></i> (970) 262-1413</li>
@@ -823,8 +553,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-
-    <!-- Col 2 -->
     <div class="f-col">
       <h4>Category</h4>
       <ul>
@@ -836,8 +564,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <li><a href="#">Marketing</a></li>
       </ul>
     </div>
-
-    <!-- Col 3 -->
     <div class="f-col">
       <h4>Quick Links</h4>
       <ul>
@@ -848,8 +574,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <li><a href="#">Course FAQ's</a></li>
       </ul>
     </div>
-
-    <!-- Col 4 -->
     <div class="f-col">
       <h4>Subscribe</h4>
       <p class="f-sub-txt">Lorem Ipsum has been them an industry printer took a galley make book.</p>
@@ -857,7 +581,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <button class="f-sub-btn">Subscribe Now</button>
     </div>
   </div>
-
   <div class="footer-bottom">
     <div class="footer-bottom-inner">
       <div class="fb-left">
@@ -866,9 +589,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <a href="#">Sitemap</a>
         <a href="#">Security</a>
       </div>
-      <div>
-        &copy; 2021 &nbsp;<a href="#" class="edule-lnk">INFYCODE</a>&nbsp; Made with <span class="heart">&hearts;</span> by <a href="#" class="cc-lnk">Codecarnival</a>
-      </div>
+      <div>&copy; 2021 &nbsp;<a href="#" class="edule-lnk">INFYCODE</a>&nbsp; Made with <span class="heart">&hearts;</span> by <a href="#" class="cc-lnk">Codecarnival</a></div>
     </div>
   </div>
 </footer>
@@ -876,38 +597,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- SCROLL TOP -->
 <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
 
-<script>
-// ── Scroll reveal
-const ro = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
-},{threshold:0.1});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-
-// ── Tabs
-document.querySelectorAll('.tab-item').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.tab-item').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
-
-// ── Scroll top
-const st = document.getElementById('scrollTop');
-window.addEventListener('scroll',()=>{
-  st.classList.toggle('show', window.scrollY > 320);
-  // sticky header shadow
-  document.querySelector('.site-header').style.boxShadow =
-    window.scrollY > 10 ? '0 3px 20px rgba(0,0,0,.10)' : '0 2px 15px rgba(0,0,0,.06)';
-});
-st.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-// ── Testimonial dots
-document.querySelectorAll('.tdot').forEach((d,i)=>{
-  d.addEventListener('click',()=>{
-    document.querySelectorAll('.tdot').forEach(x=>x.classList.remove('on'));
-    d.classList.add('on');
-  });
-});
-</script>
+<script src="main.js"></script>
 </body>
 </html>
