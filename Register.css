@@ -1,0 +1,533 @@
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; color: #1a1f2e; background: #fff; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ============================================================
+   CSS VARIABLES — Green theme, exact match to original
+   ============================================================ */
+:root {
+  --green:       #538ce1;   /* primary green (buttons, accents, hero bg) */
+  --green-dark:  #538ce1;   /* darker green for hover */
+  --green-bg:    #e8f5ee;   /* very light mint green (hero, img panel bg) */
+  --green-light: #d6ede0;   /* slightly darker mint (google button bg) */
+  --dark:        #1a1f2e;   /* near-black text */
+  --gold:        #f0a500;   /* gold/orange (dashes, arrow) */
+  --white:       #ffffff;
+  --text-muted:  #555;
+  --border:      #e0e0e0;
+}
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  background: var(--dark);
+  padding: 9px 0;
+  font-size: 13px;
+  color: #999;
+}
+
+.topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tb-left a { color: var(--green); font-weight: 700; margin-left: 3px; }
+
+.tb-contact { display: flex; align-items: center; gap: 22px; }
+.tb-contact i { color: var(--green); margin-right: 5px; }
+
+.tb-socials { display: flex; align-items: center; gap: 13px; }
+.tb-socials a { color: #999; font-size: 12px; transition: color .2s; }
+.tb-socials a:hover { color: var(--green); }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 14px rgba(0,0,0,.06);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo { display: flex; align-items: center; gap: 10px; }
+
+.logo-icon {
+  width: 62px;
+  height: 62px;
+  background: var(--green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+.logo-icon .fallback-icon { color: #fff; font-size: 17px; position: absolute; }
+.logo-icon img[style*="display: none"] + .fallback-icon { display: block; }
+
+.logo-text { font-size: 25px; font-weight: 900; color: var(--dark); letter-spacing: -.4px; }
+.logo-text span { color: var(--green); }
+
+/* Nav */
+.main-nav { display: flex; align-items: center; }
+.main-nav > li { position: relative; }
+
+.main-nav > li > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  transition: color .2s;
+}
+.main-nav > li > a:hover { color: var(--green); }
+.main-nav > li > a i { font-size: 9px; opacity: .55; margin-top: 1px; }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 32px rgba(0,0,0,.12);
+  padding: 8px 0;
+  z-index: 200;
+}
+.main-nav > li:hover .dropdown { display: block; }
+
+.dropdown li a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all .2s;
+}
+.dropdown li a:hover,
+.dropdown li a.nav-active { color: var(--green); padding-left: 26px; }
+
+/* Buttons */
+.header-btns { display: flex; align-items: center; gap: 8px; }
+
+.btn-signin {
+  padding: 9px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  transition: color .2s;
+}
+.btn-signin:hover { color: var(--green); }
+
+.btn-signup {
+  padding: 9px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  transition: all .2s;
+}
+.btn-signup:hover { background: var(--dark); color: #fff; }
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+.page-hero {
+  background: var(--green-bg);      /* light mint — matches screenshot */
+  min-height: 290px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 52px 30px 52px 185px;
+}
+
+/* Wavy lines — left */
+.deco-wave-left {
+  position: absolute;
+  left: -25px;
+  bottom: -35px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold dashes — top-left */
+.deco-dashes {
+  position: absolute;
+  left: 98px;
+  top:180px;
+  pointer-events: none;
+  z-index: 2;
+  animation: floatDashes 5s ease-in-out infinite;
+}
+
+@keyframes floatDashes {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-6px) rotate(2.5deg); }
+}
+
+/* Wavy lines — right */
+.deco-wave-right {
+  position: absolute;
+  right: -25px;
+  bottom: -35px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold curved arrow */
+.deco-arrow {
+  position: absolute;
+  right: 365px;
+  top: 120px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Medal badge */
+.deco-medal {
+  position: absolute;
+  left: 230px;
+  top: 200px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #538ce1;
+  gap: 6px;
+  animation: floatMedal 3.6s ease-in-out infinite;
+}
+@keyframes floatMedal {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+
+.medal-body {
+  width: 100px;
+  height: 100px;
+  background: var(--green);          /* same green as original */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px #538ce1(58,158,95,.4);
+  position: relative;
+}
+
+.medal-ring {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  pointer-events: none;
+}
+
+.medal-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Teacher photo circle */
+.deco-teacher {
+  position: absolute;
+  right: 55px;
+  top: 48px;
+  width: 134px;
+  height: 134px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 26px rgba(0,0,0,.14);
+  z-index: 5;
+  background: #ccc;
+  animation: floatTeacher 4.2s ease-in-out 0.4s infinite;
+}
+@keyframes floatTeacher {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.deco-teacher img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Breadcrumb + Title */
+.hero-content { position: relative; z-index: 6; }
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.breadcrumb a { color: var(--text-muted); transition: color .2s; }
+.breadcrumb a:hover { color: var(--green); }
+.bc-sep { color: var(--text-muted); }
+.bc-current { color: var(--green); font-weight: 700; }
+
+.hero-title {
+  font-size: 46px;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.2;
+}
+.hero-title .hl {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+.hero-title .hl::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   REGISTER CARD SECTION
+   ============================================================ */
+.reg-section {
+  background: #f7f8fa;
+  padding: 65px 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 400px);
+}
+
+.reg-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 32px rgba(0,0,0,.07);
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+/* ── Left Image Panel ── */
+.reg-img-side {
+  background: var(--green-bg);       /* mint green background */
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 30px 20px 0;
+  min-height: 560px;
+}
+
+/* Large green circle behind person */
+.green-circle {
+  position: absolute;
+  width: 265px;
+  height: 265px;
+  background: var(--green);
+  border-radius: 50%;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* White arrow on the green circle */
+.circle-arrow {
+  position: absolute;
+  bottom: 138px;
+  left: 50%;
+  transform: translateX(-135%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Person image */
+.reg-person {
+  position: relative;
+  z-index: 2;
+  height: 510px;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+/* ── Right Form Panel ── */
+.reg-form-side {
+  padding: 55px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-heading {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+.form-heading .hl {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+.form-heading .hl::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+}
+
+.field-group { margin-bottom: 16px; }
+
+.field {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  color: var(--dark);
+  background: #fff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.field::placeholder { color: #aaa; }
+.field:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #538ce1(58,158,95,.12);
+}
+.field.error {
+  border-color: #e74c3c;
+  animation: shake .35s ease;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%      { transform: translateX(-5px); }
+  75%      { transform: translateX(5px); }
+}
+
+/* Create account button — dark green, exactly like screenshot */
+.btn-create {
+  width: 100%;
+  padding: 17px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: .3px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 14px;
+  transition: all .3s;
+}
+.btn-create:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #538ce1(58,158,95,.35);
+}
+
+/* Sign up with Google — light green outlined, green text */
+.btn-google {
+  width: 100%;
+  padding: 15px;
+  background: var(--green-light);
+  color: var(--green);
+  border: 1.5px solid var(--green-light);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all .3s;
+  text-decoration: none;
+}
+.btn-google:hover {
+  background: #c4e4d0;
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 920px) {
+  .reg-card { grid-template-columns: 1fr; }
+  .reg-img-side { min-height: 320px; }
+  .reg-person { height: 300px; }
+  .green-circle { width: 210px; height: 210px; }
+  .reg-form-side { padding: 40px 32px; }
+  .page-hero { padding: 44px 20px 44px 44px; }
+  .deco-teacher { right: 18px; width: 95px; height: 95px; }
+  .deco-medal { right: 145px; top: 42px; }
+  .medal-body { width: 76px; height: 76px; }
+}
+
+@media (max-width: 660px) {
+  .main-nav { display: none; }
+  .hero-title { font-size: 30px; }
+  .deco-wave-right,
+  .deco-teacher,
+  .deco-medal,
+  .deco-arrow { display: none; }
+  .topbar-inner { flex-wrap: wrap; gap: 7px; }
+  .tb-arrow, .tb-arrow2 { display: none; }
+  .page-hero { padding: 36px 20px; }
+}

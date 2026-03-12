@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFYCODE - Register</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="tb-left">
+      All course 28% off for <a href="#">Liberian people's.</a>
+    </div>
+    <div class="tb-arrow">
+      <svg width="44" height="18" viewBox="0 0 44 18" fill="none">
+        <path d="M2 9 C12 3, 26 3, 38 9" stroke="#888" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M32 5 L38 9 L32 13" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+    <div class="tb-contact">
+      <span><i class="fas fa-phone-alt"></i> (970) 262-1413</span>
+      <span><i class="far fa-envelope"></i> address@gmail.com</span>
+    </div>
+    <div class="tb-arrow2">
+      <svg width="44" height="18" viewBox="0 0 44 18" fill="none">
+        <path d="M42 9 C32 3, 18 3, 6 9" stroke="#888" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M12 5 L6 9 L12 13" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+    <div class="tb-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-skype"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <img src="logo.png" alt="logo" onerror="this.style.display='none'">
+       
+      </div>
+      <div class="logo-text">INFY<span>CODE</span></div>
+    </a>
+
+    <nav>
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">All Course <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Courses Details</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">About</a></li>
+            <li><a href="register.html" class="nav-active">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">404 Error</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#">Blog Grid</a></li>
+            <li><a href="#">Blog Left Sidebar</a></li>
+            <li><a href="#">Blog Right Sidebar</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-btns">
+      <a href="login.html" class="btn-signin">Sign In</a>
+      <a href="register.html" class="btn-signup">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- 
+<section class="page-hero">
+
+  <div class="deco-wave-left">
+    <svg width="230" height="340" viewBox="0 0 230 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M210 10 C150 55, 65 80, 25 165 C-15 250, 65 300, 130 320" stroke="#3a9e5f" stroke-width="1.8" fill="none" opacity="0.3" stroke-linecap="round"/>
+      <path d="M175 25 C120 70, 45 105, 15 185 C-15 265, 55 308, 108 325" stroke="#3a9e5f" stroke-width="1.4" fill="none" opacity="0.18" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="deco-dashes">
+    <svg width="120" height="105" viewBox="0 0 120 105" fill="none">
+      <ellipse cx="16" cy="30" rx="9" ry="3.2" fill="#f0a500" opacity="0.9"  transform="rotate(-22 16 30)"/>
+      <ellipse cx="40" cy="15" rx="9" ry="3.2" fill="#f0a500" opacity="0.82" transform="rotate(-16 40 15)"/>
+      <ellipse cx="65" cy="34" rx="8" ry="3"   fill="#f0a500" opacity="0.74" transform="rotate(-30 65 34)"/>
+      <ellipse cx="9"  cy="56" rx="7" ry="2.7" fill="#f0a500" opacity="0.68" transform="rotate(-11 9 56)"/>
+      <ellipse cx="33" cy="68" rx="7" ry="2.7" fill="#f0a500" opacity="0.62" transform="rotate(-27 33 68)"/>
+      <ellipse cx="70" cy="60" rx="6.5" ry="2.4" fill="#f0a500" opacity="0.56" transform="rotate(-20 70 60)"/>
+      <ellipse cx="52" cy="83" rx="6" ry="2.2" fill="#f0a500" opacity="0.50" transform="rotate(-9 52 83)"/>
+      <ellipse cx="88" cy="24" rx="6" ry="2.2" fill="#f0a500" opacity="0.50" transform="rotate(-38 88 24)"/>
+      <ellipse cx="100" cy="50" rx="5.5" ry="2"  fill="#f0a500" opacity="0.44" transform="rotate(-22 100 50)"/>
+      <ellipse cx="82" cy="80" rx="5" ry="1.9" fill="#f0a500" opacity="0.38" transform="rotate(-14 82 80)"/>
+    </svg>
+  </div>
+
+  <div class="deco-wave-right">
+    <svg width="270" height="360" viewBox="0 0 270 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 10 C80 55, 205 85, 248 168 C290 250, 208 302, 145 325" stroke="#3a9e5f" stroke-width="1.8" fill="none" opacity="0.3" stroke-linecap="round"/>
+      <path d="M52 6 C125 58, 228 94, 256 174 C284 254, 215 308, 160 328" stroke="#3a9e5f" stroke-width="1.4" fill="none" opacity="0.18" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="deco-arrow">
+    <svg width="105" height="72" viewBox="0 0 105 72" fill="none">
+      <path d="M85 12 C62 22, 32 34, 16 62" stroke="#f0a500" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <path d="M8 48 L16 63 L30 54" stroke="#f0a500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="deco-medal">
+    <div class="medal-circle">
+  
+      <svg class="medal-ring" width="110" height="110" viewBox="0 0 110 110" fill="none">
+        <circle cx="55" cy="55" r="48" stroke="rgba(255,255,255,0.45)" stroke-width="1.8" stroke-dasharray="5 4"/>
+      </svg>
+      <div class="medal-shadow">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <polygon points="28,8 32.5,20 45,20 35.5,27.5 39,40 28,32.5 17,40 20.5,27.5 11,20 23.5,20" fill="white" opacity="0.95"/>
+          <circle cx="28" cy="46" r="3" fill="white" opacity="0.6"/>
+          <rect x="22" y="42" width="12" height="3" rx="1.5" fill="white" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="medal-underline">
+      <svg width="90" height="16" viewBox="0 0 90 16" fill="none">
+        <path d="M8 10 Q45 3 82 10" stroke="#3a9e5f" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.55"/>
+        <ellipse cx="45" cy="12" rx="42" ry="3.5" fill="rgba(58,158,95,0.12)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="deco-teacher">
+    <img
+      src="https://template.hasthemes.com/edule/eduLe/assets/images/author/author-11.jpg"
+      alt="Teacher"
+    >
+  </div>
+
+  <div class="hero-content">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      
+    <h1 class="hero-title">Registration <span class="hl">Form</span></h1>
+  </div>
+
+</section> -->
+
+<!-- ===== REGISTER CARD ===== -->
+<section class="reg-section">
+  <div class="reg-card">
+
+    <div class="deco-wave-left">
+    <svg width="230" height="340" viewBox="0 0 230 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M210 10 C150 55, 65 80, 25 165 C-15 250, 65 300, 130 320" stroke="#3a9e5f" stroke-width="1.8" fill="none" opacity="0.3" stroke-linecap="round"/>
+      <path d="M175 25 C120 70, 45 105, 15 185 C-15 265, 55 308, 108 325" stroke="#3a9e5f" stroke-width="1.4" fill="none" opacity="0.18" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+   <div class="deco-dashes">
+    <svg width="120" height="105" viewBox="0 0 120 105" fill="none">
+      <ellipse cx="16" cy="30" rx="9" ry="3.2" fill="#f0a500" opacity="0.9"  transform="rotate(-22 16 30)"/>
+      <ellipse cx="40" cy="15" rx="9" ry="3.2" fill="#f0a500" opacity="0.82" transform="rotate(-16 40 15)"/>
+      <ellipse cx="65" cy="34" rx="8" ry="3"   fill="#f0a500" opacity="0.74" transform="rotate(-30 65 34)"/>
+      <ellipse cx="9"  cy="56" rx="7" ry="2.7" fill="#f0a500" opacity="0.68" transform="rotate(-11 9 56)"/>
+      <ellipse cx="33" cy="68" rx="7" ry="2.7" fill="#f0a500" opacity="0.62" transform="rotate(-27 33 68)"/>
+      <ellipse cx="70" cy="60" rx="6.5" ry="2.4" fill="#f0a500" opacity="0.56" transform="rotate(-20 70 60)"/>
+      <ellipse cx="52" cy="83" rx="6" ry="2.2" fill="#f0a500" opacity="0.50" transform="rotate(-9 52 83)"/>
+      <ellipse cx="88" cy="24" rx="6" ry="2.2" fill="#f0a500" opacity="0.50" transform="rotate(-38 88 24)"/>
+      <ellipse cx="100" cy="50" rx="5.5" ry="2"  fill="#f0a500" opacity="0.44" transform="rotate(-22 100 50)"/>
+      <ellipse cx="82" cy="80" rx="5" ry="1.9" fill="#f0a500" opacity="0.38" transform="rotate(-14 82 80)"/>
+    </svg>
+  </div>
+
+
+  <div class="deco-wave-right">
+    <svg width="270" height="360" viewBox="0 0 270 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 10 C80 55, 205 85, 248 168 C290 250, 208 302, 145 325" stroke="#3a9e5f" stroke-width="1.8" fill="none" opacity="0.3" stroke-linecap="round"/>
+      <path d="M52 6 C125 58, 228 94, 256 174 C284 254, 215 308, 160 328" stroke="#3a9e5f" stroke-width="1.4" fill="none" opacity="0.18" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="deco-arrow">
+    <svg width="105" height="72" viewBox="0 0 105 72" fill="none">
+      <path d="M85 12 C62 22, 32 34, 16 62" stroke="#f0a500" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <path d="M8 48 L16 63 L30 54" stroke="#f0a500" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </div>
+
+
+    <!-- LEFT — image panel -->
+    <div class="reg-img-side">
+      <div class="green-circle"></div>
+      <div class="circle-arrow">
+        <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+          <path d="M52 13 C40 22, 22 32, 16 55" stroke="white" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+          <path d="M8 43 L16 57 L28 49" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <img
+        class="reg-person"
+        src="https://template.hasthemes.com/edule/eduLe/assets/images/register-login.png"
+        alt="Student registration"
+      >
+    </div>
+
+    <!-- RIGHT — form panel -->
+    <div class="reg-form-side">
+      <h2 class="form-heading">Registration <span class="hl">Now</span></h2>
+
+      <div class="field-group">
+        <input class="field" type="text" placeholder="Name">
+      </div>
+      <div class="field-group">
+        <input class="field" type="email" placeholder="Email">
+      </div>
+      <div class="field-group">
+        <input class="field" type="password" placeholder="Password">
+      </div>
+      <div class="field-group">
+        <input class="field" type="password" placeholder="Confirm Password">
+      </div>
+
+      <button class="btn-create" id="createBtn">Create an account</button>
+
+      <a href="#" class="btn-google" id="googleBtn">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20">
+        Sign up with Google
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script src="register.js"></script>
+</body>
+</html>

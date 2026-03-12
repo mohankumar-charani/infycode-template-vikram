@@ -1,0 +1,697 @@
+/* ===== RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #212529;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ===== VARIABLES ===== */
+:root {
+  --green: #538ce1;
+  --green-dark: #538ce1;
+  --green-light: #e8f0fc;
+  --green-bg: #edf3fc;
+  --dark: #1a1f2e;
+  --text: #555;
+  --gold: #1daea2;
+  --white: #fff;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+  background: #1a1f2e;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.topbar-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tb-left a {
+  color: var(--green);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.tb-contact {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #aaa;
+}
+
+.tb-contact i {
+  color: var(--green);
+  margin-right: 5px;
+}
+
+.tb-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tb-socials a {
+  color: #aaa;
+  font-size: 13px;
+  transition: color .2s;
+}
+
+.tb-socials a:hover { color: var(--green); }
+
+.tb-arrow svg,
+.tb-arrow2 svg {
+  opacity: 0.6;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 15px rgba(0,0,0,.06);
+}
+
+.header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+}
+
+
+
+.logo-icon i {
+  color: #fff;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--dark);
+  letter-spacing: -.5px;
+}
+
+.logo-text span { color: var(--green); }
+
+/* Nav */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav > li { position: relative; }
+
+.main-nav > li > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  transition: color .2s;
+}
+
+.main-nav > li > a:hover { color: var(--green); }
+
+.main-nav > li > a i { font-size: 10px; opacity: .6; }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  min-width: 210px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.12);
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.main-nav > li:hover .dropdown { display: block; }
+
+.dropdown li a {
+  display: block;
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  transition: all .2s;
+}
+
+.dropdown li a:hover,
+.dropdown li a.active-link {
+  color: var(--green);
+  padding-left: 28px;
+}
+
+/* Header buttons */
+.header-btns { display: flex; align-items: center; gap: 10px; }
+
+.btn-signin {
+  padding: 9px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  transition: color .2s;
+}
+
+.btn-signin:hover { color: var(--green); }
+
+.btn-signup {
+  padding: 9px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  transition: all .2s;
+}
+
+.btn-signup:hover {
+  background: var(--dark);
+  color: #fff;
+}
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+  background: var(--green-bg);
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 50px 30px 50px 180px;
+}
+
+/* Wavy deco lines - left */
+.deco-wave-left {
+  position: absolute;
+  left: -20px;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold dashes - top left */
+.deco-gold-dashes {
+  position:absolute;
+  left: 98px;
+  top:180px;
+  pointer-events: none;
+  z-index: 2;
+  animation: dashFloat 5s ease-in-out infinite;
+}
+
+@keyframes dashFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+/* Wavy deco lines - right */
+.deco-wave-right {
+  position: absolute;
+  right: -20px;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gold curved arrow - center-right area */
+.deco-gold-arrow {
+  position: absolute;
+  right: 380px;
+  top: 120px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Green medal circle */
+.deco-medal {
+  position: absolute;
+  left: 230px;
+  top: 200px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: medalFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes medalFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.medal-circle {
+  width: 92px;
+  height: 92px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px #538ce1(83,140,225,.4);
+}
+
+/* Teacher photo circle - top right */
+.deco-teacher-photo {
+  position: absolute;
+  right: 60px;
+  top: 50px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 28px rgba(0,0,0,.14);
+  z-index: 4;
+  animation: teacherFloat 4s ease-in-out 0.5s infinite;
+  background: #ddd;
+}
+
+@keyframes teacherFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.deco-teacher-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Breadcrumb + Title */
+.page-hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.breadcrumb a {
+  color: #555;
+  transition: color .2s;
+}
+
+.breadcrumb a:hover { color: var(--green); }
+
+.breadcrumb .sep { color: #555; }
+
+.breadcrumb .current {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.page-title {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.page-title .hl {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+
+.page-title .hl::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+}
+
+/* ===== LOGIN SECTION ===== */
+.login-sec {
+  background: #f7f8fa;
+  padding: 60px 20px 80px;
+  min-height: calc(100vh - 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 30px rgba(0,0,0,.07);
+  max-width: 980px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+/* ── Image Panel ── */
+.login-img-panel {
+  background: var(--green-bg);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 30px 20px 0;
+  min-height: 480px;
+}
+
+/* Big green circle behind image */
+.img-bg-circle {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: var(--green);
+  border-radius: 50%;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* White arrow on the green circle */
+.img-arrow {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-130%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Student image */
+.login-img {
+  position: relative;
+  z-index: 2;
+  height: 440px;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+/* ── Form Panel ── */
+.login-form-panel {
+  padding: 60px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.form-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 36px;
+  line-height: 1.2;
+}
+
+.form-title .hl {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+
+.form-title .hl::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  color: var(--dark);
+  background: #fff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  font-weight: 500;
+}
+
+.form-input::placeholder { color: #aaa; }
+
+.form-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(83,140,225,.12);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 17px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  margin-bottom: 14px;
+  margin-top: 8px;
+  transition: all .3s;
+  letter-spacing: .3px;
+}
+
+.btn-login:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(83,140,225,.35);
+}
+
+.btn-google {
+  width: 100%;
+  padding: 15px;
+  background: var(--green-light);
+  color: var(--dark);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all .3s;
+}
+
+.btn-google:hover {
+  background: #d4eddf;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .login-box {
+    grid-template-columns: 1fr;
+  }
+
+  .login-img-panel {
+    min-height: 300px;
+  }
+
+  .login-img {
+    height: 280px;
+  }
+
+  .img-bg-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .login-form-panel {
+    padding: 40px 32px;
+  }
+
+  .page-hero {
+    padding: 40px 20px 40px 40px;
+  }
+
+  .deco-teacher-photo {
+    right: 20px;
+    width: 90px;
+    height: 90px;
+  }
+
+  .deco-medal {
+    right: 140px;
+    top: 40px;
+  }
+
+  .medal-circle {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-nav,
+  .header-btns .btn-signin {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 30px;
+  }
+
+  .deco-gold-arrow,
+  .deco-teacher-photo,
+  .deco-medal,
+  .deco-wave-right {
+    display: none;
+  }
+
+  .topbar-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tb-arrow, .tb-arrow2 {
+    display: none;
+  }
+}
+
+/* ===== SIGN UP PROMPT (below Google button) ===== */
+.signup-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #777;
+}
+
+.signup-link {
+  color: #538ce1;
+  font-weight: 800;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: color .2s;
+}
+
+.signup-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #538ce1;
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform .2s ease;
+}
+
+.signup-link:hover { color: #538ce1; }
+.signup-link:hover::after { transform: scaleX(1); }
+
+/* ===== Fix Sign Up header button to be an anchor ===== */
+a.btn-signup {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  transition: all .2s;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+}
+a.btn-signup:hover { background: var(--dark); color: #fff; }
+
+/* ===== Fix hero wave colors to green ===== */
+.deco-wave-left svg path,
+.deco-wave-right svg path {
+  stroke: #3a9e5f !important;
+}
+
+/* ===== Fix medal shadow to green ===== */
+.medal-shadow svg ellipse { fill: #538ce1(58,158,95,0.18) !important; }
+.medal-shadow svg path    { stroke: #538ce1 !important; }
+
+/* ===== Medal circle green ===== */
+.medal-circle { background: #538ce1 !important; box-shadow: 0 8px 28px #538ce1(58,158,95,.4) !important; }
